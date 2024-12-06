@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot Memes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #4c4cfc;
+            margin-top: 20px;
+        }
+        .meme-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+        .meme-card {
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+        }
+        .meme-card img {
+            width: 100%;
+            height: auto;
+        }
+        .meme-card h3 {
+            margin: 10px;
+            color: #222;
+        }
+        .meme-card p {
+            margin: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .meme-card a {
+            display: block;
+            text-decoration: none;
+            background-color: #4c4cfc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
+            font-weight: bold;
+        }
+        .meme-card a:hover {
+            background-color: #3737d0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brainrot Memes Hub</h1>
+    <p>Enjoy some hilarious memes and check out the TikToks that inspired them!</p>
+    <div class="meme-container">
+        <!-- Meme Card 1 -->
+        <div class="meme-card">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 1">
+            <h3>Meme Title 1</h3>
+            <p>This is a description of the meme, referencing its TikTok origin.</p>
+            <a href="https://www.tiktok.com/@brainroy/video/example1" target="_blank">Watch on TikTok</a>
+        </div>
+        <!-- Meme Card 2 -->
+        <div class="meme-card">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 2">
+            <h3>Meme Title 2</h3>
+            <p>This meme went viral for its relatable humor!</p>
+            <a href="https://www.tiktok.com/@brainroy/video/example2" target="_blank">Watch on TikTok</a>
+        </div>
+        <!-- Meme Card 3 -->
+        <div class="meme-card">
+            <img src="https://via.placeholder.com/300x200" alt="Meme 3">
+            <h3>Meme Title 3</h3>
+            <p>Don't miss the TikTok that started this trend!</p>
+            <a href="https://www.tiktok.com/@brainroy/video/example3" target="_blank">Watch on TikTok</a>
+        </div>
+        <!-- Add more meme cards as needed -->
+    </div>
+</body>
+</html>
