@@ -65,33 +65,118 @@
             background-color: #ff69b4;
             color: black;
         }
+
+        /* Form for adding TikTok links */
+        .add-tiktok-form {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .add-tiktok-form input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            margin-right: 10px;
+        }
+
+        .add-tiktok-form button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-tiktok-form button:hover {
+            background-color: black;
+            color: #ff69b4;
+        }
+
+        /* Popup Styles */
+        #popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+
+        #popup img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #popup button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #popup button:hover {
+            background-color: black;
+            color: #ff69b4;
+        }
     </style>
 </head>
 <body>
+    <div id="popup">
+        <div>
+            <img src="image.png" alt="Rizzler Face">
+            <h2>Do you want to enter the chaos?</h2>
+            <button onclick="enterSite()">Yes, take me in!</button>
+        </div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="rizzmass.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
     <h1>Internet Brain Rot</h1>
     <p>Welcome to the ultimate chaos zone. Click below to watch brainrot-inducing TikToks!</p>
 
-    <div class="tiktok-container">
-        <!-- TikTok Card 1 -->
-        <div class="tiktok-card">
-            <h3>Chaotic TikTok #1</h3>
-            <p>The legendary "Grinch Knee Surgery" vibes.</p>
-            <a href="https://www.tiktok.com/@centext/video/7426381059522104609" target="_blank">Watch on TikTok</a>
-        </div>
+    <form class="add-tiktok-form" onsubmit="addTikTok(event)">
+        <input type="text" id="tiktokLink" placeholder="Enter TikTok link..." required>
+        <button type="submit">Add TikTok</button>
+    </form>
 
-        <!-- TikTok Card 2 -->
-        <div class="tiktok-card">
-            <h3>Chaotic TikTok #2</h3>
-            <p>More memes to send your brain spiraling!</p>
-            <a href="https://www.tiktok.com/@itztherizzler?lang=en" target="_blank">Watch on TikTok</a>
-        </div>
-
-        <!-- TikTok Card 3 -->
-        <div class="tiktok-card">
-            <h3>Chaotic TikTok #3</h3>
-            <p>When knee surgery memes hit a little too close to home.</p>
-            <a href="https://www.tiktok.com/@centext/video/7426381059522104609" target="_blank">Watch on TikTok</a>
-        </div>
+    <div class="tiktok-container" id="tiktokContainer">
+        <!-- Dynamic TikTok Cards will appear here -->
     </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function addTikTok(event) {
+            event.preventDefault();
+            const link = document.getElementById('tiktokLink').value;
+
+            if (link) {
+                const container = document.getElementById('tiktokContainer');
+                const card = document.createElement('div');
+
+                card.className = 'tiktok-card';
+                card.innerHTML = `
+                    <h3>New TikTok</h3>
+                    <p>Added by a chaotic visitor.</p>
+                    <a href="${link}" target="_blank">Watch on TikTok</a>
+                `;
+
+                container.appendChild(card);
+                document.getElementById('tiktokLink').value = '';
+            }
+        }
+    </script>
 </body>
 </html>
